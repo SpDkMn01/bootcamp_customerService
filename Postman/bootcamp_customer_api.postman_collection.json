@@ -6,30 +6,34 @@
 	},
 	"item": [
 		{
-			"name": "GetAll",
+			"name": "GetAllCustomer",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}",
+					"raw": "{{URL}}/{{CUSTOMER}}",
 					"host": [
 						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMER}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GetById",
+			"name": "GetByIdCustomer",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/634721616abfc74005b9cca5",
+					"raw": "{{URL}}/{{CUSTOMER}}/634721616abfc74005b9cca5",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"{{CUSTOMER}}",
 						"634721616abfc74005b9cca5"
 					]
 				}
@@ -37,13 +41,13 @@
 			"response": []
 		},
 		{
-			"name": "Save",
+			"name": "SaveCustomer",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Miguel\",\r\n    \"customerType\": \"Personal\"\r\n}",
+					"raw": "{\r\n    \"firstName\": \"Miguel\",\r\n    \"lastName\": \"Rojas\",\r\n    \"customerType\": \"Personal\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,16 +55,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}",
+					"raw": "{{URL}}/{{CUSTOMER}}",
 					"host": [
 						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMER}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update",
+			"name": "UpdateCustomer",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -74,11 +81,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/update/634721616abfc74005b9cca5",
+					"raw": "{{URL}}/{{CUSTOMER}}/update/634721616abfc74005b9cca5",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"{{CUSTOMER}}",
 						"update",
 						"634721616abfc74005b9cca5"
 					]
@@ -87,16 +95,158 @@
 			"response": []
 		},
 		{
-			"name": "Delete",
+			"name": "DeleteCustomer",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/delete/6347216c6abfc74005b9cca6",
+					"raw": "{{URL}}/{{CUSTOMER}}/delete/6347216c6abfc74005b9cca6",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"{{CUSTOMER}}",
+						"delete",
+						"6347216c6abfc74005b9cca6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCustomerType",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{CUSTOMERTYPE}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMERTYPE}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByIdCustomerType",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{CUSTOMERTYPE}}/63472c8c0b8bdf0ef1847be6",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMERTYPE}}",
+						"63472c8c0b8bdf0ef1847be6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveCustomerType",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Empresarial\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{CUSTOMERTYPE}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMERTYPE}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomerType",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\" : \"personal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{CUSTOMERTYPE}}/update/63472c8c0b8bdf0ef1847be6",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMERTYPE}}",
+						"update",
+						"63472c8c0b8bdf0ef1847be6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCustomerType",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{CUSTOMERTYPE}}/delete/6347216c6abfc74005b9cca6",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{CUSTOMERTYPE}}",
 						"delete",
 						"6347216c6abfc74005b9cca6"
 					]

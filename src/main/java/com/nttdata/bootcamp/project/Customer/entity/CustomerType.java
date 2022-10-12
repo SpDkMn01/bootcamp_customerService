@@ -9,11 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "customers")
-public class Customer {
+@Document(collection = "customerType")
+public class CustomerType {
     @Id
     private String id;
-    private String firstName;
-    private String lastName;
-    private String customerType;
+    private String description;
 }
