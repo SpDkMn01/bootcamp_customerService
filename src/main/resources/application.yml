@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      database: bootcamp_customer_db
+      host: localhost
+      port: 8092
+
+
+server:
+  port: 8091

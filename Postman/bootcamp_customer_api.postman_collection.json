@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "80a9e0be-4d0e-4c59-86fa-5bd0fb70b01b",
+		"name": "bootcamp_customer_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/634721616abfc74005b9cca5",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"634721616abfc74005b9cca5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Miguel\",\r\n    \"customerType\": \"Personal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pedro D\",\r\n    \"customerType\": \"Personal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/update/634721616abfc74005b9cca5",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"update",
+						"634721616abfc74005b9cca5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/delete/6347216c6abfc74005b9cca6",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"delete",
+						"6347216c6abfc74005b9cca6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
