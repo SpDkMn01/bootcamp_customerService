@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project.Customer.repository;
+package com.nttdata.bootcamp.project.Customer.infrastructure;
 
 import com.nttdata.bootcamp.project.Customer.entity.CustomerType;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;

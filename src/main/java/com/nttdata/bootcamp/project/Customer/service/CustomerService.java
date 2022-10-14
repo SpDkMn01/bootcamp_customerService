@@ -1,37 +1,40 @@
 package com.nttdata.bootcamp.project.Customer.service;
 
 import com.nttdata.bootcamp.project.Customer.dto.CustomerDto;
-import com.nttdata.bootcamp.project.Customer.repository.ICustomerRepository;
+import com.nttdata.bootcamp.project.Customer.infrastructure.ICustomerRepository;
 import com.nttdata.bootcamp.project.Customer.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Service
-public class CustomerService {
+public class CustomerService implements ICustomerService<CustomerDto> {
 
     @Autowired
     private ICustomerRepository repository;
 
-    public Flux<CustomerDto> getCustomers()
+    public Flux<CustomerDto> getAll()
     {
-        return repository.findAll().map(AppUtils::entityToDto);
+        return repository.findAll().delayElements(Duration.ofSeconds(1)).map(AppUtils::entityToDto);
     }
 
-    public Mono<CustomerDto> getCustomer(String id)
+    public Mono<CustomerDto> getById(String id)
     {
         return repository.findById(id).map(AppUtils::entityToDto);
     }
 
-    public Mono<CustomerDto> saveCustomer(Mono<CustomerDto> customerDtoMono)
+    public Mono<CustomerDto> save(Mono<CustomerDto> customerDtoMono)
     {
         return customerDtoMono.map(AppUtils::dtoToEntity)
                 .flatMap(repository::insert)
                 .map(AppUtils::entityToDto);
     }
 
-    public Mono<CustomerDto> updateCustomer(Mono<CustomerDto> customerDtoMono, String id)
+    public Mono<CustomerDto> update(Mono<CustomerDto> customerDtoMono, String id)
     {
         return repository.findById(id)
                 .flatMap(
@@ -42,7 +45,7 @@ public class CustomerService {
                 .map(AppUtils::entityToDto);
     }
 
-    public Mono<Void> deleteCustomer(String id)
+    public Mono<Void> delete(String id)
     {
         return repository.deleteById(id);
     }
